@@ -10,5 +10,5 @@ def apicall(name):
     response = requests.get(url)
     data = response.json()
 
-    matching_apps = [app for app in data['applist']['apps'] if name.lower() in app['name'].lower()]
+    matching_apps = [app for app in data['applist']['apps'] if app['name'].lower() == name.lower()]
     return {'matching_apps': matching_apps}
